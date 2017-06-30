@@ -4,7 +4,8 @@
   -----------
 
   The ftp server and client allows a user to setup retrieve and store files
-  from and to the server and get directory listing of the server.
+  from and to the server and get directory listing of the server. It uses the 
+  C++ socket library in Linux. 
 
   Documentation
   -------------
