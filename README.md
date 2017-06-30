@@ -21,17 +21,20 @@
   Files
   --------
   /bin/
+  
       ftpclient : executable for the ftp client program
       ftpserver : executable for the ftp client program
       commandTest : executable for the server commands test
 
 
   /doc/
+  
       protocol.txt : A specification of the application-layer protocol.
       usage.txt : Documentation of the design usage.
       notesForTA.txt : some notes for the TA.
 
   /src/
+  
       ftpclient.c : contains the code for the implementation of the
       client
       ftpserver.c : contains the code for the implementation of the
@@ -41,6 +44,7 @@
       Makefile : compiles the previous files. Also contains a clean function
 
   /test/
+  
       commandsTest.py : contains a python script that tests the correct 
       functionallity of the server commands (STOR, RETR,...)
       mainTest.py : contains a python script that test the correct 
@@ -50,6 +54,7 @@
       if there is any problem transfering files
 
   /testOut/
+  
       This directory is used by mainTest.py to temporarelly send and retreive
       files from it and it deletes them at the end
 
