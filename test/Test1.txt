@@ -1,0 +1,62 @@
+
+                          Basic Server-Client
+
+  What is it?
+  -----------
+
+  The basic Server-Client allows you to simulate the connection
+  between a client and a server in a single machine using the
+  Linux command terminal.
+
+  Documentation
+  -------------
+
+  Included in the doc directory.
+
+  Installation
+  ------------
+
+  Executing make in the main directory compiles all the files
+  needed.
+
+  Files
+  --------
+  /bin/
+      myclient : excecutable for myserver.c
+      myserver : excecutable for myclient.c
+
+  /doc/
+      protocol.txt : A specification of the application-layer protocol.
+      usage.txt : Documentation of the design usage.
+
+  /src/
+      myserver.c : contains the code for the implementation of the
+      server. Imports functions from the following libraries: sys/types.h,
+      sys/socket.h, strings.h, string.h, arpa/inet.h, stdio.h, stdlib.h,
+      unistd.h and error.h
+      myclient.c : contains the code for the implementation of the
+      client. Imports functions from the following libraries: sys/types.h,
+      sys/socket.h, strings.h, string.h, arpa/inet.h, stdio.h, stdlib.h,
+      unistd.h and error.h
+      error.c : contains plenty of functions for error handling and also
+      wrapping functions for the sys/socket.h and arpa/inet.h functions.
+      All used from the unp.h library included in the book UNIX Network
+      Programming, Volume 1, Third Edition, The Sockets Networking API
+      error.h : contains the headers for the error.c functions
+      Makefile : compiles both myclient and myserver using error.c and
+      error.h as sources. Also contains a clean function
+
+  /ex1testdir3571234612123421
+      Directory created by test_ex1.py to test different easy functions.
+
+  Makefile : calls the Makefile in /src/ and also includes a clean
+  function
+
+  test_ex1.py: python script to test a set of basic commands. "I don't
+  know how to test other bigger functions but they still work"
+
+
+  Contacts
+  --------
+
+  Luis Serra Garcia, Creator: lserraga@ucsc.edu

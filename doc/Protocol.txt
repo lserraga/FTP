@@ -1,0 +1,40 @@
+
+                Specification of the application-layer protocol:
+
+        The server is initiallized with its listening port as a parameter. The
+        client is initiallized with the ip of the server (in this case 127.0.0.1)
+        and the listening port of the server as the parameters.
+
+        Control connection:
+
+                After a client connects to the server, the later forks a new 
+        subprocess for it (server is concurrent). The control messages have a 
+        maximum size of 200 Bytes and they follow a very specific structure.
+        The client firsts checks that the user input is correct (get, ls, put 
+        or quit) and the parameters are correct. Then it translates them to
+        server commands (STOR, RETR, LIST, PORT, ABOR and QUIT). The server
+        replies follow the FTP response structure : XXX Message. Being XXX 
+        the response code.
+
+        Data connection:
+
+                After getting a 200 command ok from the server, the client
+        opens a new listening port taken from the pool of free ephemeral 
+        ports and sends a port command to the server. After receiving
+        "201 Data connection OK" the client will know that the data 
+        connection is set up correctly and the transfer of data. Depending
+        on the user command, the client will start sending data or 
+        waiting for it. The same for the server.
+
+        After that transfer finishes either the server or the client closes
+        the data connectio. The client will start waiting for user input again.
+
+        Command correcteness:
+
+                Both the server and the client checks if the messages are in 
+        the correct format and asnwers apporpiately. In the server, after
+        receiving a command that requires the set up of a data connection
+        it will wait for a PORT command and will answer with an error message 
+        otherwise. If the server receives a PORT command not expected it will 
+        answer with an error.
+

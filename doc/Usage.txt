@@ -1,0 +1,31 @@
+
+            How to use the ftp client and server programs
+
+    Just excecute the client and the terminal in two different directories
+    with its respective parameters:
+    ./ftpserver <listening-port>
+    ./ftpclient <server-ip> <server‐listen­port>
+    You can now excecute get, put, ls and quit commands in the client.
+
+
+    TESTING:
+
+    	For the testing I have made 2 python scripts and also a c program to
+    test the server commands.
+
+    	commandsTest.py : just excecute it with python3 test/commandsTest.py
+    in the main directory. It uses testingCommandsServer.c which is a 
+    program that sends the raw messages that the user inputs. So we can
+    directly test the behaviour of the server when it receives server
+    commands (POTS,STOR,RETR,QUIT,LIST and PORT).
+
+    	mainTest.py : just excecute it with python3 test/mainTest.py
+    in the main directory. The test files in the test directory are used 
+    to test the get function (the server is excecuted in the test and 
+    the client in testOut directory). For the put test, it creates a 
+    100MB file with random data and it sends it to the server.
+    It also check the list command checking various directories and
+    finally the quit command. At the end it deletes all the new created
+    files.
+
+    
